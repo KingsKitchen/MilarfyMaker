@@ -26,10 +26,10 @@
     }
 
     #header img {
-      width: 50%;
+      width: 30%;
     }
 
-    #links, #additional-links {
+    #links, #additional-links, #more-links {
       text-align: center;
       margin-top: 20px;
     }
@@ -50,12 +50,13 @@
     }
 
     #starwars {
-      font-family: 'Arial';  /* Modern font */
-      font-size: 24px;
+      font-family: 'Arial';
+      font-size: 26px;
       font-weight: bold;
       width: 90%;
       margin: auto;
-      color: #800080;
+      color: #FFFFFF;
+      text-shadow: 0px 0px 4px #000000;
       white-space: pre-wrap;
       text-align: center;
     }
@@ -96,15 +97,17 @@
 
     <div id="additional-links">
       <!-- Second layer of buttons -->
-      <!-- You can adjust these later -->
       <div class="link-box">
-        <a href="#" onclick="alert('wen')">Coming Soon</a>
+        <a href="#" onclick="toggleLightMode()">Light Mode for Psychos</a>
       </div>
       <div class="link-box">
-        <a href="#" onclick="alert('wen')">Coming Soon</a>
+        <a href="#" onclick="alert('Coming Soon 1')">Coming Soon 1</a>
       </div>
       <div class="link-box">
-        <a href="#" onclick="alert('wen')">Coming Soon</a>
+        <a href="#" onclick="alert('Coming Soon 2')">Coming Soon 2</a>
+      </div>
+      <div class="link-box">
+        <a href="#" onclick="alert('Coming Soon 3')">Coming Soon 3</a>
       </div>
     </div>
 
@@ -155,6 +158,21 @@ You've been initiated into the dark arts of Milarfy. Your daily and weekly homew
   </div>
 
   <script>
+    let isLightMode = false;
+
+    function toggleLightMode() {
+      isLightMode = !isLightMode;
+      document.body.style.backgroundColor = isLightMode ? "#FFF" : "#000";
+      let starWarsElement = document.getElementById("starwars");
+      if (isLightMode) {
+        starWarsElement.style.color = "#000000";
+        starWarsElement.style.textShadow = "0px 0px 4px #FFFFFF";
+      } else {
+        starWarsElement.style.color = "#FFFFFF";
+        starWarsElement.style.textShadow = "0px 0px 4px #000000";
+      }
+    }
+
     const canvas = document.createElement("canvas");
     const context = canvas.getContext("2d");
     const drops = [];
@@ -174,7 +192,7 @@ You've been initiated into the dark arts of Milarfy. Your daily and weekly homew
     }
 
     function draw() {
-      context.fillStyle = "rgba(0, 0, 0, 0.05)";
+      context.fillStyle = isLightMode ? "rgba(255, 255, 255, 0.05)" : "rgba(0, 0, 0, 0.05)";
       context.fillRect(0, 0, canvas.width, canvas.height);
 
       for (let i = 0; i < columns; i++) {
