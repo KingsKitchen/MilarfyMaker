@@ -13,11 +13,13 @@
     body, html {
       height: 100%;
       background-color: #000;
+      overflow-x: hidden;
     }
 
     #container {
       position: relative;
       z-index: 2;
+      max-width: 100vw;
     }
 
     #header {
@@ -26,7 +28,8 @@
     }
 
     #header img {
-      width: 30%;
+      width: 80%;
+      max-width: 400px;
     }
 
     #links, #additional-links, #more-links {
@@ -42,6 +45,11 @@
       width: calc(100%/3 - 40px);
       border-radius: 5px;
       text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .link-box:hover {
+      background-color: #FF00FF;
     }
 
     .link-box a {
@@ -112,49 +120,8 @@
     </div>
 
     <div id="starwars">
-The Milarfesto: The Dark Art of Crypto Chaos - [REDACTED] Edition
-🔥 Welcome to the Abyss of Milarfy 🔥
-Homework: Your First Initiation
-Before you proceed, make your presence known on X. Broadcast, "I've just entered the Abyss of Milarfy, and I'll never be the same again." This marks your initial descent into our shadowy realm.
-
-🌑 The Shadowy Mission 🌑
-You think you've grasped X? You've merely scratched its surface. Milarfy delves deeper. We are the anarchists of the crypto underworld, hell-bent on unsettling the fragile order with our dark arts.
-
-Homework: Spread the Shadow
-Distribute this Milarfesto to at least three souls prepared for the descent. Use encrypted messages, direct messages, or even dark web channels. Enlighten them: this is no game; it's a calling.
-
-🎭 Three Dark Arts to Master 🎭
-1️⃣ Memes: The Alchemy of Confusion
-👁️ Create: Channel your inner chaos into memes that only fellow Milarfy initiates will fathom.
-
-👁️ Weaponize: Every meme should be a cognitive landmine, detonating confusion and disbelief.
-
-👁️ Deploy: Send your memes into the abyss of X. No markings. Let their perplexing nature be their own catalyst.
-
-Homework: Daily Meme Mayhem
-Create and share one meme daily that encapsulates the essence of Milarfy. Share it on X and tag Milarfy. Confusion and engagement are your gauges of mastery.
-
-2️⃣ Parodies: The Incantations of Irony
-🎶 Craft: Wield satire like a blade, slicing through the absurdities of crypto's so-called deities and their blind followers.
-
-🎶 Store: Hoard your parodies like treasures, saved for the moments when the world is most in need of a jolt.
-
-🎶 Release: When the celestial bodies align, or at least weekly, unleash a parody to disturb the peace on X.
-
-Homework: Weekly Bewilderment
-Pen a parody that takes aim at a hot topic in the crypto void. Release it on X and savor the resulting disarray.
-
-3️⃣ Information: The Forbidden Scrolls
-📚 Research: Venture where others fear to tread, diving into forbidden crypto knowledge.
-
-📚 Write: Transmute this knowledge into unsettling articles, summaries, or analyses.
-
-📚 Share: Masquerade these as educational posts on X, pulling back the curtain on a darker reality.
-
-Homework: Disseminate the Dark Truth
-Investigate a contentious crypto topic. Craft an unsettling exposé and release it on X, disguised as enlightenment.
-
-You've been initiated into the dark arts of Milarfy. Your daily and weekly homework serves as your rites of passage. Fulfill them to ascend or remain a shadow, forever lingering on the fringes.    </div>
+      <!-- The manifesto text will be dynamically added here -->
+    </div>
   </div>
 
   <script>
@@ -221,6 +188,70 @@ You've been initiated into the dark arts of Milarfy. Your daily and weekly homew
     setInterval(draw, 50);
 
     document.body.appendChild(canvas);
+
+    // Typewriter effect for the manifesto
+    const manifestoText = `
+      The Milarfesto: The Dark Art of Crypto Chaos - [REDACTED] Edition
+🔥 Welcome to the Abyss of Milarfy 🔥
+Homework: Your First Initiation
+Before you proceed, make your presence known on X. Broadcast, "I've just entered the Abyss of Milarfy, and I'll never be the same again." This marks your initial descent into our shadowy realm.
+
+🌑 The Shadowy Mission 🌑
+You think you've grasped X? You've merely scratched its surface. Milarfy delves deeper. We are the anarchists of the crypto underworld, hell-bent on unsettling the fragile order with our dark arts.
+
+Homework: Spread the Shadow
+Distribute this Milarfesto to at least three souls prepared for the descent. Use encrypted messages, direct messages, or even dark web channels. Enlighten them: this is no game; it's a calling.
+
+🎭 Three Dark Arts to Master 🎭
+1️⃣ Memes: The Alchemy of Confusion
+👁️ Create: Channel your inner chaos into memes that only fellow Milarfy initiates will fathom.
+
+👁️ Weaponize: Every meme should be a cognitive landmine, detonating confusion and disbelief.
+
+👁️ Deploy: Send your memes into the abyss of X. No markings. Let their perplexing nature be their own catalyst.
+
+Homework: Daily Meme Mayhem
+Create and share one meme daily that encapsulates the essence of Milarfy. Share it on X and tag Milarfy. Confusion and engagement are your gauges of mastery.
+
+2️⃣ Parodies: The Incantations of Irony
+🎶 Craft: Wield satire like a blade, slicing through the absurdities of crypto's so-called deities and their blind followers.
+
+🎶 Store: Hoard your parodies like treasures, saved for the moments when the world is most in need of a jolt.
+
+🎶 Release: When the celestial bodies align, or at least weekly, unleash a parody to disturb the peace on X.
+
+Homework: Weekly Bewilderment
+Pen a parody that takes aim at a hot topic in the crypto void. Release it on X and savor the resulting disarray.
+
+3️⃣ Information: The Forbidden Scrolls
+📚 Research: Venture where others fear to tread, diving into forbidden crypto knowledge.
+
+📚 Write: Transmute this knowledge into unsettling articles, summaries, or analyses.
+
+📚 Share: Masquerade these as educational posts on X, pulling back the curtain on a darker reality.
+
+Homework: Disseminate the Dark Truth
+Investigate a contentious crypto topic. Craft an unsettling exposé and release it on X, disguised as enlightenment.
+
+You've been initiated into the dark arts of Milarfy. Your daily and weekly homework serves as your rites of passage. Fulfill them to ascend or remain a shadow, forever lingering on the fringes.
+    `;
+
+    let i = 0;
+    const speed = 5; // Faster typing speed for a high IQ audience
+    const starwarsElement = document.getElementById("starwars");
+
+    function typeWriter() {
+      if (i < manifestoText.length) {
+        starwarsElement.innerHTML += manifestoText.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    // Start typing after a 1-second delay
+    setTimeout(() => {
+      typeWriter();
+    }, 1000);
   </script>
 </body>
 </html>
