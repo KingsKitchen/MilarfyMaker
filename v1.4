@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Milarfesto: The Dark Art of Crypto Chaos</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      background-color: #000;
+    }
+
+    #container {
+      position: relative;
+      z-index: 2;
+    }
+
+    #header {
+      text-align: center;
+      width: 100%;
+    }
+
+    #header img {
+      width: 50%;
+    }
+
+    #starwars {
+      font-size: 16px;
+      width: 90%;
+      margin: auto;
+      color: #800080;
+      font-family: "Arial", sans-serif;
+      white-space: pre-wrap;
+      text-align: center;
+    }
+
+    #links {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .link-box {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px;
+      background-color: #800080;
+      width: 30%;
+      border-radius: 5px;
+    }
+
+    .link-box a {
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <img src="https://imgur.com/O82E3DL.png" alt="Milarfesto Header">
+    </div>
+
+    <div id="starwars">
+The Milarfesto: The Dark Art of Crypto Chaos - [REDACTED] Edition
+🔥 Welcome to the Abyss of Milarfy 🔥
+Homework: Your First Initiation
+Before you proceed, make your presence known on X. Broadcast, "I've just entered the Abyss of Milarfy, and I'll never be the same again." This marks your initial descent into our shadowy realm.
+
+🌑 The Shadowy Mission 🌑
+You think you've grasped X? You've merely scratched its surface. Milarfy delves deeper. We are the anarchists of the crypto underworld, hell-bent on unsettling the fragile order with our dark arts.
+
+Homework: Spread the Shadow
+Distribute this Milarfesto to at least three souls prepared for the descent. Use encrypted messages, direct messages, or even dark web channels. Enlighten them: this is no game; it's a calling.
+
+🎭 Three Dark Arts to Master 🎭
+1️⃣ Memes: The Alchemy of Confusion
+👁️ Create: Channel your inner chaos into memes that only fellow Milarfy initiates will fathom.
+
+👁️ Weaponize: Every meme should be a cognitive landmine, detonating confusion and disbelief.
+
+👁️ Deploy: Send your memes into the abyss of X. No markings. Let their perplexing nature be their own catalyst.
+
+Homework: Daily Meme Mayhem
+Create and share one meme daily that encapsulates the essence of Milarfy. Share it on X and tag Milarfy. Confusion and engagement are your gauges of mastery.
+
+2️⃣ Parodies: The Incantations of Irony
+🎶 Craft: Wield satire like a blade, slicing through the absurdities of crypto's so-called deities and their blind followers.
+
+🎶 Store: Hoard your parodies like treasures, saved for the moments when the world is most in need of a jolt.
+
+🎶 Release: When the celestial bodies align, or at least weekly, unleash a parody to disturb the peace on X.
+
+Homework: Weekly Bewilderment
+Pen a parody that takes aim at a hot topic in the crypto void. Release it on X and savor the resulting disarray.
+
+3️⃣ Information: The Forbidden Scrolls
+📚 Research: Venture where others fear to tread, diving into forbidden crypto knowledge.
+
+📚 Write: Transmute this knowledge into unsettling articles, summaries, or analyses.
+
+📚 Share: Masquerade these as educational posts on X, pulling back the curtain on a darker reality.
+
+Homework: Disseminate the Dark Truth
+Investigate a contentious crypto topic. Craft an unsettling exposé and release it on X, disguised as enlightenment.
+
+You've been initiated into the dark arts of Milarfy. Your daily and weekly homework serves as your rites of passage. Fulfill them to ascend or remain a shadow, forever lingering on the fringes.    </div>
+
+    <div id="links">
+      <div class="link-box">
+        <a href="https://kingskitchen.github.io/" target="_blank">MilarfME Maker</a>
+      </div>
+      <div class="link-box">
+        <a href="#" onclick="alert('bring proof of milarf')">Telegram</a>
+        <div>
+          <a href="https://twitter.com/Y33tDavidson" target="_blank">Prim</a> |
+          <a href="https://twitter.com/mountaindewbyok" target="_blank">Dewbs</a> |
+          <a href="https://twitter.com/kingarfeth" target="_blank">Arf</a>
+        </div>
+      </div>
+      <div class="link-box">
+        <a href="#" onclick="alert('wen')">Coming Soon</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d");
+    const drops = [];
+    const text = [];
+    const font_size = 15;
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    let columns = Math.floor(width / font_size);
+
+    canvas.width = width;
+    canvas.height = height;
+    columns = Math.floor(width / font_size);
+
+    for (let i = 0; i < columns; i++) {
+      drops[i] = Math.random() * height;
+      text[i] = Math.floor(Math.random() * 2) === 1 ? "0" : "1";
+    }
+
+    function draw() {
+      context.fillStyle = "rgba(0, 0, 0, 0.05)";
+      context.fillRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = 0; i < columns; i++) {
+        context.fillStyle = "#800080";
+        context.fillText(text[i], i * font_size, drops[i] * font_size);
+
+        if (Math.random() < 0.01) {
+          context.fillStyle = "#FF00FF";
+          context.fillText(text[i], i * font_size, drops[i] * font_size);
+        }
+
+        if (Math.random() < 0.005) {
+          context.fillStyle = "#FFFFFF";
+          context.fillText(text[i], i * font_size, drops[i] * font_size);
+        }
+
+        drops[i]++;
+
+        if (Math.random() > 0.95 || drops[i] * font_size > canvas.height) {
+          drops[i] = 0;
+          text[i] = Math.floor(Math.random() * 2) === 1 ? "0" : "1";
+        }
+      }
+    }
+
+    setInterval(draw, 50);
+
+    document.body.appendChild(canvas);
+  </script>
+</body>
+</html>
