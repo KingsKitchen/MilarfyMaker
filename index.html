@@ -10,6 +10,11 @@
       box-sizing: border-box;
     }
 
+    @font-face {
+      font-family: 'PixelFont';
+      src: url('pixel-font.ttf');  /* You'll need to include your actual pixel font file here */
+    }
+
     body, html {
       height: 100%;
       background-color: #000;
@@ -29,16 +34,6 @@
       width: 50%;
     }
 
-    #starwars {
-      font-size: 16px;
-      width: 90%;
-      margin: auto;
-      color: #800080;
-      font-family: "Arial", sans-serif;
-      white-space: pre-wrap;
-      text-align: center;
-    }
-
     #links {
       text-align: center;
       margin-top: 20px;
@@ -49,13 +44,25 @@
       margin: 10px;
       padding: 15px;
       background-color: #800080;
-      width: 30%;
+      width: calc(100%/3 - 40px);
       border-radius: 5px;
+      text-align: center;
     }
 
     .link-box a {
       color: #FFFFFF;
       text-decoration: none;
+    }
+
+    #starwars {
+      font-family: 'PixelFont';  /* Pixel font */
+      font-size: 24px;
+      font-weight: bold;
+      width: 90%;
+      margin: auto;
+      color: #800080;
+      white-space: pre-wrap;
+      text-align: center;
     }
 
     canvas {
@@ -72,6 +79,23 @@
   <div id="container">
     <div id="header">
       <img src="https://imgur.com/O82E3DL.png" alt="Milarfesto Header">
+    </div>
+
+    <div id="links">
+      <div class="link-box">
+        <a href="https://kingskitchen.github.io/" target="_blank">MilarfME Maker</a>
+      </div>
+      <div class="link-box">
+        <a href="#" onclick="alert('bring proof of milarf')"></a>
+        <div>
+          <a href="https://twitter.com/Y33tDavidson" target="_blank">Prim</a> |
+          <a href="https://twitter.com/mountaindewbyok" target="_blank">Dewbs</a> |
+          <a href="https://twitter.com/kingarfeth" target="_blank">Arf</a>
+        </div>
+      </div>
+      <div class="link-box">
+        <a href="#" onclick="alert('Milarfy Media: coming soon')">Memes/gifs</a>
+      </div>
     </div>
 
     <div id="starwars">
@@ -118,23 +142,6 @@ Homework: Disseminate the Dark Truth
 Investigate a contentious crypto topic. Craft an unsettling exposé and release it on X, disguised as enlightenment.
 
 You've been initiated into the dark arts of Milarfy. Your daily and weekly homework serves as your rites of passage. Fulfill them to ascend or remain a shadow, forever lingering on the fringes.    </div>
-
-    <div id="links">
-      <div class="link-box">
-        <a href="https://kingskitchen.github.io/" target="_blank">MilarfME Maker</a>
-      </div>
-      <div class="link-box">
-        <a href="#" onclick="alert('bring proof of milarf')">Telegram</a>
-        <div>
-          <a href="https://twitter.com/Y33tDavidson" target="_blank">Prim</a> |
-          <a href="https://twitter.com/mountaindewbyok" target="_blank">Dewbs</a> |
-          <a href="https://twitter.com/kingarfeth" target="_blank">Arf</a>
-        </div>
-      </div>
-      <div class="link-box">
-        <a href="#" onclick="alert('wen')">Coming Soon</a>
-      </div>
-    </div>
   </div>
 
   <script>
